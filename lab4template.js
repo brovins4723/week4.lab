@@ -14,9 +14,15 @@ const vol = new GainNode(myLab4AudCtx);       // master gain node that controls 
 // vol.gain.value = 0.5;                      // (optional) set a default master volume
 
 // ---------- TODO SECTION (complete your lab assignment below here) ----------
+const delay = new DelayNode(myLab4AudCtx);
+delay.delayTime.value = delayTimeNum;
 
+const delFb = new GainNode(myLab4AudCtx);
+delFb.gain.value = 0.;
 
-
+delay.connect(vol);
+delay.connect(delFb);
+delFb.connect(delay);
 
 // make your additions here
 
