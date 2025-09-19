@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4</title>
+    <!-- Load the JavaScript file for this lab (ES module syntax) -->
+    <script type="module" src="lab4template.js"></script>
+</head>
+<body>
+    <h1>Lab 4</h1>
+    <h2>Generative Loop Synth with Delay</h2>
+
+    <!-- Transport controls for starting and stopping the looper -->
+    <h3>Transport</h3>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <!-- ADSR envelope controls -->
+    <h3>ADSR</h3>
+    <div>
+        <!-- Attack time slider (0–1 seconds, fine step) -->
+        <label for="attTime">Attack</label>
+        <input type="range" id="attTime" min="0" max="1" value="0.001" step="0.001">
+        <label for="attTime" id="attLabel">1 ms</label>
+    </div>
+    <div>
+        <!-- Decay time slider (0–1 seconds, fine step) -->
+        <label for="decTime">Decay</label>
+        <input type="range" id="decTime" min="0" max="1" value="0.05" step="0.001">
+        <label for="decTime" id="decLabel">50 ms</label>
+    </div>
+    <div>
+        <!-- Sustain amplitude slider (0–1, step of 0.01 for precision) -->
+        <label for="susAmp">Sustain</label>
+        <input type="range" id="susAmp" min="0" max="1" value="0.25" step="0.01">
+        <label for="susAmp" id="susLabel">0.25</label>
+    </div>
+    <div>
+        <!-- Release time slider (0–1 seconds, fine step) -->
+        <label for="relTime">Release</label>
+        <input type="range" id="relTime" min="0" max="1" value="0.04" step="0.001">
+        <label for="relTime" id="relLabel">40 ms</label>
+    </div>
+
+    <!-- Delay effect controls -->
+    <h3>Delay</h3>
+    <div>
+        <!-- Feedback amount slider (0–1, controls how much delayed signal is fed back) -->
+        <label for="fb">Feedback</label>
+        <input type="range" id="fb" min="0" max="1" value="0" step="0.01">
+        <label for="fb" id="fbLabel">0%</label>
+    </div>
+</body>
+</html>
