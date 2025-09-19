@@ -96,6 +96,16 @@ document.querySelector("#relTime").addEventListener("input", (e) => {
     release = Number(e.target.value);
 });
 
+document.querySelector("#loop").addEventListener("input", (e) => {
+    document.querySelector("#loopLabel").textContent = `${Number(e.target.value)}`;
+    loopTime = Number(e.target.value);
+});
+
+document.querySelector("#delTime").addEventListener("input", (e) => {
+    document.querySelector("#delLabel").textContent = `${Number(e.target.value * 1000)} ms`;
+    delayTimeNum = Number(e.target.value);
+});
+
 // -------------------- UI Control for Feedback Gain --------------------
 document.querySelector("#fb").addEventListener("input", (e) => {
     document.querySelector("#fbLabel").textContent = `${Number(Math.round(e.target.value * 100))}%`;
