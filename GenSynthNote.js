@@ -115,10 +115,12 @@ export default class GenSynthNote {
      */
     start() {
         const now = this.ctx.currentTime;
+        
+        //need to start the oscillator
+        this.osc.start(now);
 
         // Ensure a clean starting point for both envelopes
         this.resetEnvelopes(now);
-
 
 
         // === Amplitude ADS ===
