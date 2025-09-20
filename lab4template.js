@@ -20,9 +20,10 @@ delay.delayTime.value = delayTimeNum;
 const delFb = new GainNode(myLab4AudCtx);
 delFb.gain.value = 0.;
 
-delay.connect(vol);
 delay.connect(delFb);
 delFb.connect(delay);
+delay.connect(vol);
+
 
 // make your additions here
 
@@ -97,13 +98,8 @@ document.querySelector("#relTime").addEventListener("input", (e) => {
 });
 
 document.querySelector("#loop").addEventListener("input", (e) => {
-    document.querySelector("#loopLabel").textContent = `${Number(e.target.value)}`;
+    document.querySelector("#loopLabel").textContent = `${Number(e.target.value)} s`;
     loopTime = Number(e.target.value);
-});
-
-document.querySelector("#delTime").addEventListener("input", (e) => {
-    document.querySelector("#delLabel").textContent = `${Number(e.target.value * 1000)} ms`;
-    delayTimeNum = Number(e.target.value);
 });
 
 // -------------------- UI Control for Feedback Gain --------------------
